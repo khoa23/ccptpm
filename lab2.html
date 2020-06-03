@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Dental1</title>
+   
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+          <div class="col-sm">
+           
+          </div>
+          <div class="col-sm">
+            <h3 style="color: blue;">DENTAL PAYMENT FORM</h3>
+            <!-- <form> -->
+                <div class="row">
+                    <div class="col-6 col-sm-5">
+                       <label>Ten Khach Hang</label>
+                    </div>
+                    <div class="col-6 col-sm-7">
+                       <input type="text" id="tenkhachhang" required>
+                    </div>
+                 </div>
+
+                 <div class="row">
+                    <div class="col-6 col-sm-8">                      
+                       <input type="checkbox"  id="caovoi" value="100000" >
+                       <label>Cao voi</label>
+                    </div>
+                    <div class="col-6 col-sm-4">
+                        <label>$100.000</label>
+                    </div>
+                 </div>
+
+                 <div class="row">
+                    <div class="col-6 col-sm-8">                      
+                       <input type="checkbox"  id="taytrang" value="12000000" >
+                       <label>Tay Trang</label>
+                    </div>
+                    <div class="col-6 col-sm-4">
+                        <label>$1.200.000</label>
+                    </div>
+                 </div>
+
+                 <div class="row">
+                    <div class="col-6 col-sm-8">                      
+                       <input type="checkbox"  id="chuphinhrang" value="200000" >
+                       <label>Chup Hinh Rang</label>
+                    </div>
+                    <div class="col-6 col-sm-4">
+                        <label>$200.000</label>
+                    </div>
+                 </div>
+
+
+                 <div class="row">
+                    <div class="col-6 col-sm-8">                      
+                        <label for="quantity">Tram Rang </label>
+                        <input type="number" id="tramrang" name="quantity" min="1" max="32" >
+                    </div>
+                    <div class="col-6 col-sm-4">
+                        <label id="tramrang1" value="80000">$80.000/cai</label>
+
+                    </div>
+                 </div>
+
+
+                 <div class="row">
+                    <div class="col-6 col-sm-3">                      
+                        
+                    </div>
+                    <div class="col-6 col-sm-9">
+                        <label>Tong cong</label>
+                        <input type="text"  id="tongcong" name="tongcong">
+                    </div>
+                 </div>
+
+                  <div class="row">
+                    <div class="col-6 col-sm-8">                      
+                        <button type="button" class="btn btn-warning">Thoat</button>
+                    </div>
+                    <div class="col-6 col-sm-4">
+                        <button class="btn btn-primary" onclick="myFunction()">Tinh Tien</button>
+                    </div>
+                 </div>
+                 
+            <!-- </form> -->
+                
+                
+            
+          </div>
+          <div class="col-sm">
+           
+          </div>
+        </div>
+      </div>
+    
+
+
+     
+    <script>
+        function myFunction() {
+            
+            var caovoi = document.getElementById("caovoi");
+            var tramrang = document.getElementById("tramrang");
+            var chuphinhrang = document.getElementById("chuphinhrang");
+            var taytrang = document.getElementById("taytrang");
+            var tong = 0;
+
+            if(caovoi.checked == true )
+            {
+                tong = tong + 100000 ;
+            }
+
+            if(tramrang.value != 0 )
+            {
+                tong = tong + tramrang.value*80000;
+            }
+
+
+            if(chuphinhrang.checked == true )
+            {
+                tong = tong + 200000 ;
+            }
+
+            if(taytrang.checked == true )
+            {
+                tong = tong + 1200000 ;
+            }
+
+            document.getElementById("tongcong").value = tong;
+        }
+
+        
+    </script>
+   
+</body>
+</html>
